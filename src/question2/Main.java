@@ -6,12 +6,17 @@ import question1.CyclicAcquisition;
 /**
  * Decrivez votre classe Main ici.
  *
- * @author (votre nom)
- * @version (un numero de version ou une date)
+ * @author SAULNIER
+ * @version 12 -03-2017
  */
 public class Main
 {
-
+    /**
+     * The entry point of application.
+     *
+     * @param args the input arguments
+     * @throws Exception the exception
+     */
     public static void main(String[] args) throws Exception
     {
         //HTTPSensor.setHttpProxy("cache.cnam.fr",3128);
@@ -22,11 +27,9 @@ public class Main
             ds2438 = new HTTPSensor(args[0]);
         }
 
-        //a completer
-
         Handler<Float> maxHandler = new MaxHandler(null);
         Handler<Float> minHandler = new MinHandler(maxHandler);
-        Handler<Float> fileHandler = new FileHandler("mesures",minHandler);
+        Handler<Float> fileHandler = new FileHandler("mesures", minHandler);
         Handler<Float> chain = new TraceHandler(fileHandler);
 
         CyclicAcquisition acquisition = new CyclicAcquisition(ds2438, 1000, new ChainCommand<>(chain));

@@ -3,14 +3,16 @@ package question2;
 /**
  * Decrivez votre classe MinHandler ici.
  *
- * @author (votre nom)
- * @version (un numero de version ou une date)
+ * @author SAULNIER
+ * @version 12 -03-2017
  */
-
-
 public class MinHandler extends Handler<Float>
 {
-
+    /**
+     * Instantiates a new Min handler.
+     *
+     * @param successor the successor
+     */
     public MinHandler(Handler<Float> successor)
     {
         super(successor);
@@ -18,7 +20,6 @@ public class MinHandler extends Handler<Float>
 
     public boolean handleRequest(Float value)
     {
-        // a completer
         if (value < 35.0F) {
             System.out.println("minimum......ds2438.value : " + value);
             return true;

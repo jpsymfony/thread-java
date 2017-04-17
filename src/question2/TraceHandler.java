@@ -4,9 +4,16 @@ import java.util.Calendar;
 import java.text.DateFormat;
 import java.util.Locale;
 
+/**
+ * The type Trace handler.
+ */
 public class TraceHandler extends Handler<Float>
 {
-
+    /**
+     * Instantiates a new Trace handler.
+     *
+     * @param successor the successor
+     */
     public TraceHandler(Handler<Float> successor)
     {
         super(successor);

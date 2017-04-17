@@ -1,15 +1,18 @@
 package question1;
 
-
 /**
  * Decrivez votre classe Main ici.
  *
- * @author (votre nom)
- * @version (un numero de version ou une date)
+ * @author SAULNIER
+ * @version 12 -03-2017
  */
 public class Main
 {
-
+    /**
+     * The entry point of application.
+     *
+     * @param args the input arguments
+     */
     public static void main(String[] args)
     {
         //HTTPSensor.setHttpProxy("cache.cnam.fr",3128); // si vous etes en wifi et au Cnam
@@ -27,11 +30,8 @@ public class Main
             System.out.println("requete aupres du ds2438 : " + request1);
             System.out.println("requete aupres du ds2438 : " + request2);
 
-            System.out.println("ds2438.value() request1 : " + ds2438.value(request1));
-            System.out.println("ds2438.value() request2 : " + ds2438.value(request2));
-
-            System.out.println("ds2438.value() new request : " + ds2438.value());
-            System.out.println("ds2438.value() new request : " + ds2438.value());
+            System.out.println("ds2438.value(): " + ds2438.value());
+            System.out.println("ds2438.value(): " + ds2438.value());
 
         } catch (Exception e) {
             e.printStackTrace();

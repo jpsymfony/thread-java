@@ -8,10 +8,10 @@ import java.io.InputStreamReader;
 import java.net.URL;
 import java.net.URLConnection;
 
+import java.text.DecimalFormat;
 import java.util.Enumeration;
 import java.util.Properties;
 import java.util.StringTokenizer;
-
 
 /**
  * Classe de lecture d'un capteur sur le Web
@@ -21,11 +21,16 @@ import java.util.StringTokenizer;
  */
 public class HTTPSensor extends HumiditySensor
 {
-
+    /**
+     * The constant ONE_MINUTE.
+     */
     public static final long ONE_MINUTE = 60L * 1000L;
 
     // public final static String DEFAULT_HTTP_SENSOR = "http://lmi92.cnam.fr:8999/ds2438/";
 
+    /**
+     * The constant DEFAULT_HTTP_SENSOR.
+     */
     public final static String DEFAULT_HTTP_SENSOR = "http://localhost:8999/ds2438/";
     /**
      * l'URL associee au capteur
@@ -51,6 +56,7 @@ public class HTTPSensor extends HumiditySensor
         this.urlSensor = urlSensor;
     }
 
+
     /**
      * Lecture de la valeur de humidite relative
      **/
@@ -59,20 +65,9 @@ public class HTTPSensor extends HumiditySensor
         StringTokenizer st = new StringTokenizer(request(), "=");
         st.nextToken();
 
-        return (int)Float.parseFloat(st.nextToken());
+        float f = Float.parseFloat(st.nextToken()) * 10F;
+        return ((int) f) / 10F;
     }
-
-    /**
-     * Lecture de la valeur de humidite relative
-     **/
-    public float value(String request) throws Exception
-    {
-        StringTokenizer st = new StringTokenizer(request, "=");
-        st.nextToken();
-
-        return (int)Float.parseFloat(st.nextToken());
-    }
-
 
     public long minimalPeriod()
     {
@@ -86,7 +81,7 @@ public class HTTPSensor extends HumiditySensor
     /**
      * lecture de l'URL
      *
-     * @return l'url associee a ce capteur
+     * @return l 'url associee a ce capteur
      */
     public String getUrl()
     {

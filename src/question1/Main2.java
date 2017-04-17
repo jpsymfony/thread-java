@@ -1,15 +1,20 @@
 package question1;
 
-
 /**
  * Decrivez votre classe Main ici.
  *
- * @author (votre nom)
- * @version (un numero de version ou une date)
+ * @author SAULNIER
+ * @version 12 -03-2017
  */
 public class Main2
 {
 
+    /**
+     * The entry point of application.
+     *
+     * @param args the input arguments
+     * @throws Exception the exception
+     */
     public static void main(String[] args) throws Exception
     {
 //    HTTPSensor.setHttpProxy("cache.cnam.fr",3128);

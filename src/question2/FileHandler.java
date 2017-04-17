@@ -17,14 +17,23 @@ import java.text.DateFormat;
 // emploi de getResource (voir java.lang.Class)
 import java.net.URL;
 
+/**
+ * The type File handler.
+ */
 public class FileHandler extends Handler<Float>
-{ // a completer {
+{
     private final static int MAX = 5;
     private String fileName;
     private int counter;
 
     private SortedMap<Date, Float> table;
 
+    /**
+     * Instantiates a new File handler.
+     *
+     * @param fileName  the file name
+     * @param successor the successor
+     */
     public FileHandler(String fileName, Handler<Float> successor)
     {
         super(successor);
@@ -49,7 +58,6 @@ public class FileHandler extends Handler<Float>
 
         return super.handleRequest(value);
     }
-
 
     /**
      * Cette methode genere un fichier HTML .
@@ -82,5 +90,4 @@ public class FileHandler extends Handler<Float>
         bw.close();
         bw.close();
     }
-
 }

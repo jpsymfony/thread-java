@@ -6,12 +6,12 @@ import java.text.DateFormat;
 /**
  * Decrivez votre classe ConsoleCommand ici.
  *
- * @author (votre nom)
- * @version (un numero de version ou une date)
+ * @param <T> the type parameter
+ * @author SAULNIER
+ * @version 12 -03-2017
  */
 public class ConsoleCommand<T> implements Command<T>
 {
-
     public void make(T f)
     {
         String date = DateFormat.getTimeInstance().format(Calendar.getInstance().getTime());

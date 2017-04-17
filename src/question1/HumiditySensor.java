@@ -1,24 +1,26 @@
 package question1;
 
-
 /**
  * Decrivez votre classe Humidity ici.
  *
- * @author (votre nom)
- * @version (un numero de version ou une date)
+ * @author SAULNIER
+ * @version 12 -03-2017
  */
 public abstract class HumiditySensor
 {
     /**
      * valeur du capteur, precision de 0.1
+     *
+     * @return the float
+     * @throws Exception the exception
      */
     public abstract float value() throws Exception;
 
     /**
-     * valeur du capteur, precision de 0.1
+     * Minimal period long.
+     *
+     * @return the long
      */
-    public abstract float value(String request) throws Exception;
-
-    /* periode minimale entre deux lectures */
+/* periode minimale entre deux lectures */
     public abstract long minimalPeriod();
 }
